@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>水灯节</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ชุดสี/ไล่เฉดที่ใช้ร่วมกัน -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="pgf-lotus" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#f4eea4"/><stop offset=".22" stop-color="#fde6c2"/><stop offset=".55" stop-color="#f9b9c1"/><stop offset="1" stop-color="#ec7d93"/></linearGradient>
+      <linearGradient id="pgb-lotus" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fbf3b6"/><stop offset=".25" stop-color="#ffeed4"/><stop offset=".6" stop-color="#fcd0d6"/><stop offset="1" stop-color="#f69bad"/></linearGradient>
+      <linearGradient id="pgf-white" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#f1ebb8"/><stop offset=".3" stop-color="#fff9ec"/><stop offset=".7" stop-color="#ffffff"/><stop offset="1" stop-color="#d3cdf0"/></linearGradient>
+      <linearGradient id="pgb-white" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff4c4"/><stop offset=".3" stop-color="#fffdf6"/><stop offset=".7" stop-color="#fbf8ff"/><stop offset="1" stop-color="#e2dcf8"/></linearGradient>
+      <linearGradient id="pgf-leaf" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#1c5a2a"/><stop offset=".5" stop-color="#4c9d47"/><stop offset="1" stop-color="#a6da6c"/></linearGradient>
+      <linearGradient id="pgb-leaf" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#16461f"/><stop offset=".6" stop-color="#3a8a3e"/><stop offset="1" stop-color="#84c45a"/></linearGradient>
+      <linearGradient id="petShade" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#7a2a46" stop-opacity=".4"/><stop offset=".38" stop-color="#7a2a46" stop-opacity="0"/></linearGradient>
+      <linearGradient id="bowlG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0f27e"/><stop offset=".5" stop-color="#c7d83a"/><stop offset="1" stop-color="#889c1e"/></linearGradient>
+      <radialGradient id="floorG" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#fff3c0"/><stop offset=".7" stop-color="#f8d3c4"/><stop offset="1" stop-color="#ec9fb0"/></radialGradient>
+      <radialGradient id="roseG" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#ff5468"/><stop offset=".55" stop-color="#d0152c"/><stop offset="1" stop-color="#860a1c"/></radialGradient>
+      <radialGradient id="rosePinkG" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#ffc3d3"/><stop offset=".55" stop-color="#ff739b"/><stop offset="1" stop-color="#c23c68"/></radialGradient>
+      <linearGradient id="logG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cfc5a6"/><stop offset=".35" stop-color="#fbf6e6"/><stop offset=".7" stop-color="#eee5ca"/><stop offset="1" stop-color="#b3a684"/></linearGradient>
+      <radialGradient id="logTopG" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#fffdf2"/><stop offset="1" stop-color="#e7dcbb"/></radialGradient>
+      <linearGradient id="incG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a24a16"/><stop offset=".5" stop-color="#e98d3e"/><stop offset="1" stop-color="#b4581c"/></linearGradient>
+      <linearGradient id="tagG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaea"/><stop offset="1" stop-color="#f4e6c2"/></linearGradient>
+      <linearGradient id="sheenG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".4"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#500" stop-opacity=".16"/></linearGradient>
+      <radialGradient id="glowG"><stop offset="0" stop-color="#ffd27a" stop-opacity=".95"/><stop offset="1" stop-color="#ff9a3c" stop-opacity="0"/></radialGradient>
+      <radialGradient id="lanternG" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#ff5a4a"/><stop offset=".6" stop-color="#d0192b"/><stop offset="1" stop-color="#7d0a16"/></radialGradient>
+      <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1030"/><stop offset=".6" stop-color="#2a1f4e"/><stop offset="1" stop-color="#6a2e52"/></linearGradient>
+      <linearGradient id="waterG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3560"/><stop offset=".4" stop-color="#17204a"/><stop offset="1" stop-color="#070d24"/></linearGradient>
+    </defs>
+  </svg>
+
+  <canvas id="fw" aria-hidden="true"></canvas>
+  <div class="bg-stars" aria-hidden="true"></div>
+  <div class="bg-moon" aria-hidden="true"></div>
+  <div id="lanterns" aria-hidden="true"></div>
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <button class="btn-music off" id="musicBtn" type="button" aria-label="音乐 / เพลง" title="音乐 / เพลง">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M9 3v11.3A3.5 3.5 0 1 0 11 17.5V7.8l8-1.6v6.1A3.5 3.5 0 1 0 21 15.5V3z"/><line class="mute-slash" x1="3" y1="3" x2="21" y2="21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+  </button>
+
+  <main class="container app py-4">
+
+    <!-- 1 ลงชื่อเข้าห้อง -->
+    <section class="screen active" id="join">
+      <div class="card glass frame text-center">
+        <div class="card-body p-4 p-md-5">
+          <div class="seal mx-auto mb-3" aria-hidden="true">愿</div>
+          <div class="eyebrow">水灯节 · ลอยกระทง</div>
+          <h1 class="title">水灯节快乐</h1>
+          <div class="sub-th">今晚一起去放水灯吧，BB。</div>
+          <p class="lead-zh">一条河，两盏灯，还有我们。</p>
+          <p class="lead-th">如果能陪在彼此身边，一起看看月亮就好了。</p>
+          <div class="hero-kr" id="heroKr" aria-hidden="true"></div>
+          <form id="joinForm" class="row g-3 justify-content-center mt-1" autocomplete="off">
+            <div class="col-12 col-sm-5">
+              <label class="form-label" for="nameInput">你的名字 </label>
+              <input id="nameInput" class="form-control text-center" maxlength="16" required placeholder="">
+            </div>
+            <div class="col-12 col-sm-5">
+              <label class="form-label" for="roomInput">河畔暗号 <small>รหัสห้อง</small></label>
+              <input id="roomInput" class="form-control text-center" maxlength="24" required placeholder="两人填同一个 / ใช้รหัสเดียวกัน">
+            </div>
+            <div class="col-12">
+              <button class="btn btn-lantern btn-lg px-5" type="submit">走向河边 <small>ไปที่ริมน้ำ</small></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 เลือกกระทง + เขียนคำอธิษฐาน (เห็น/เขียนได้เฉพาะของตัวเอง) -->
+    <section class="screen" id="make">
+      <div class="card glass frame">
+        <div class="card-body p-4 p-md-5">
+          <div class="text-center mb-4">
+            <div class="eyebrow">只属于你的水灯 · กระทงของคุณ</div>
+            <h2 class="h-zh">挑一盏灯，写下心愿</h2>
+            <div class="sub-th">เลือกกระทงของคุณ แล้วเขียนคำอธิษฐาน</div>
+          </div>
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-5">
+              <div class="preview-stage" id="previewStage"></div>
+              <div class="row g-2 mt-1" id="styleOptions"></div>
+            </div>
+            <div class="col-12 col-lg-7">
+              <label class="form-label" for="tagInput">小签 <small>ป้ายคำอวยพรบนกระทง (ไม่เกิน 12 ตัว)</small></label>
+              <input id="tagInput" class="form-control mb-3" maxlength="12" placeholder="平安喜乐 / มีความสุข">
+              <label class="form-label" for="wishInput">我的心愿 <small>คำอธิษฐานของฉัน</small></label>
+              <textarea id="wishInput" class="form-control wish-paper" rows="6" maxlength="200" placeholder="愿我们很快就能重逢……&#10;ขอให้เราได้พบกันเร็ว ๆ นี้…"></textarea>
+              <div class="d-flex justify-content-between small mt-2 text-muted-lt">
+                <span>放入河中后便不能再修改 · ปล่อยแล้วแก้ไขไม่ได้</span><span id="wishCount">0 / 200</span>
+              </div>
+              <div class="d-flex flex-wrap gap-2 mt-4">
+                <button class="btn btn-lantern btn-lg flex-grow-1" id="releaseBtn" type="button" disabled>放水灯 <small>ปล่อยกระทง</small></button>
+                <button class="btn btn-outline-gold" id="backJoin" type="button">‹ 返回 <small>กลับ</small></button>
+                <button class="btn btn-outline-gold" id="peekRiver" type="button">先看看河 <small>ดูแม่น้ำก่อน</small></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 แม่น้ำร่วมกัน -->
+    <section class="screen" id="river">
+      <div class="river-full">
+        <div class="river-wrap" id="riverScene">
+            <svg class="river-bg" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+              <defs>
+                <linearGradient id="sk2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#080a15"/><stop offset=".55" stop-color="#14172b"/><stop offset="1" stop-color="#3b2c30"/></linearGradient>
+                <radialGradient id="tGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffcf7a" stop-opacity=".55"/><stop offset="1" stop-color="#ffcf7a" stop-opacity="0"/></radialGradient>
+                <radialGradient id="stGl"><stop offset="0" stop-color="#fff8dc"/><stop offset=".25" stop-color="#ffd98a" stop-opacity=".7"/><stop offset="1" stop-color="#ffb04a" stop-opacity="0"/></radialGradient>
+                <linearGradient id="gold2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a4"/><stop offset=".4" stop-color="#f0be42"/><stop offset=".8" stop-color="#bd7c16"/><stop offset="1" stop-color="#7a4a0c"/></linearGradient>
+                <linearGradient id="goldSh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".42"/><stop offset=".38" stop-color="#fff" stop-opacity=".2"/><stop offset=".62" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".5"/></linearGradient>
+                <linearGradient id="wall2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2cf"/><stop offset="1" stop-color="#d6a45a"/></linearGradient>
+                <linearGradient id="roof2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a23420"/><stop offset="1" stop-color="#4d1612"/></linearGradient>
+                <linearGradient id="water2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#55525e"/><stop offset=".18" stop-color="#34364a"/><stop offset=".6" stop-color="#1b1d2b"/><stop offset="1" stop-color="#0c0d16"/></linearGradient>
+                <linearGradient id="reflFade" gradientUnits="userSpaceOnUse" x1="0" y1="316" x2="0" y2="520"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+                <mask id="reflMask" maskUnits="userSpaceOnUse" x="0" y="316" width="1000" height="244"><rect x="0" y="316" width="1000" height="244" fill="url(#reflFade)"/></mask>
+                <filter id="ripple" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.006 0.09" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G" result="d"/><feGaussianBlur in="d" stdDeviation="1.4 3"/></filter>
+                <pattern id="bal" width="9" height="9" patternUnits="userSpaceOnUse"><rect x="3" y="0" width="3.2" height="9" rx="1" fill="#efe2c2"/></pattern>
+                <g id="wat">
+                  <g id="trees"></g>
+                  <!-- ศาลาข้างซ้าย -->
+                  <g>
+                    <rect x="268" y="290" width="86" height="22" fill="#2a1a12"/>
+                    <rect x="276" y="293" width="70" height="19" fill="#ffcf6a" opacity=".55"/>
+                    <path d="M252 292Q276 290 288 270L312 258L336 270Q348 290 372 292L364 298H260Z" fill="url(#roof2)"/>
+                    <path d="M252 292Q276 290 288 270L312 258L336 270Q348 290 372 292" fill="none" stroke="#f0c040" stroke-width="1.4"/>
+                    <g stroke="#f3d68a" stroke-width="2"><line x1="282" y1="298" x2="282" y2="312"/><line x1="312" y1="298" x2="312" y2="312"/><line x1="342" y1="298" x2="342" y2="312"/></g>
+                  </g>
+                  <!-- พระอุโบสถ -->
+                  <g>
+                    <rect x="392" y="304" width="190" height="12" fill="#e9dcc0"/>
+                    <rect x="410" y="258" width="154" height="48" fill="url(#wall2)"/>
+                    <g fill="#ffb94a"><path d="M424 304V276Q431 266 438 276V304Z"/><path d="M452 304V276Q459 266 466 276V304Z"/><path d="M480 304V270Q487 258 494 270V304Z"/><path d="M508 304V276Q515 266 522 276V304Z"/><path d="M536 304V276Q543 266 550 276V304Z"/></g>
+                    <g fill="#fff6d8" opacity=".85"><rect x="418" y="258" width="4" height="46"/><rect x="446" y="258" width="4" height="46"/><rect x="474" y="258" width="3" height="46"/><rect x="498" y="258" width="3" height="46"/><rect x="526" y="258" width="4" height="46"/><rect x="552" y="258" width="4" height="46"/></g>
+                    <path d="M396 262Q420 260 432 240L448 238H526L542 240Q554 260 578 262L570 270H404Z" fill="url(#roof2)"/>
+                    <path d="M396 262Q420 260 432 240L448 238H526L542 240Q554 260 578 262" fill="none" stroke="#f3c640" stroke-width="1.6"/>
+                    <path d="M432 240Q452 238 462 220L487 206L512 220Q522 238 542 240Z" fill="url(#roof2)"/>
+                    <path d="M432 240Q452 238 462 220L487 206L512 220Q522 238 542 240" fill="none" stroke="#f3c640" stroke-width="1.6"/>
+                    <path d="M452 238L487 212L522 238Z" fill="#c8861c"/><path d="M462 238L487 218L512 238Z" fill="#8f2414"/>
+                    <g fill="none" stroke="#f3c640" stroke-width="2" stroke-linecap="round"><path d="M487 206Q489 194 499 190"/><path d="M487 206Q485 194 475 190"/><path d="M396 262Q392 256 394 248"/><path d="M578 262Q582 256 580 248"/></g>
+                  </g>
+                  <!-- เจดีย์ทอง -->
+                  <g>
+                    <rect x="596" y="298" width="112" height="18" fill="#efe0b6"/><rect x="604" y="286" width="96" height="14" fill="url(#gold2)"/><rect x="612" y="276" width="80" height="12" fill="url(#gold2)"/>
+                    <path d="M620 276C614 240 630 208 652 192C674 208 690 240 684 276Z" fill="url(#gold2)"/>
+                    <g stroke="#7a4a0c" stroke-width="1.3" opacity=".6" fill="none"><path d="M617 264Q652 270 687 264"/><path d="M620 250Q652 256 684 250"/><path d="M626 235Q652 241 678 235"/><path d="M634 220Q652 226 670 220"/></g>
+                    <rect x="638" y="176" width="28" height="16" fill="url(#gold2)"/><rect x="634" y="166" width="36" height="10" fill="url(#gold2)"/><rect x="640" y="158" width="24" height="8" fill="url(#gold2)"/>
+                    <path d="M643 158L652 44L661 158Z" fill="url(#gold2)"/>
+                    <g stroke="#8a5410" stroke-width="1" opacity=".55"><line x1="644" y1="146" x2="660" y2="146"/><line x1="645" y1="130" x2="659" y2="130"/><line x1="646" y1="114" x2="658" y2="114"/><line x1="647" y1="98" x2="657" y2="98"/><line x1="648" y1="82" x2="656" y2="82"/><line x1="649" y1="66" x2="655" y2="66"/></g>
+                    <path d="M652 44L652 28" stroke="#f0be42" stroke-width="1.6"/><circle cx="652" cy="44" r="3" fill="#ffe27a"/>
+                    <path d="M620 276C614 240 630 208 652 192C674 208 690 240 684 276Z" fill="url(#goldSh)"/><path d="M643 158L652 44L661 158Z" fill="url(#goldSh)"/>
+                    <g fill="url(#gold2)"><path d="M598 298L604 272L610 298Z"/><path d="M694 298L700 272L706 298Z"/></g>
+                    <circle cx="652" cy="240" r="90" fill="url(#tGlow)"/>
+                  </g>
+                  <!-- อาคารขวา -->
+                  <g>
+                    <rect x="732" y="272" width="96" height="40" fill="url(#wall2)"/>
+                    <g fill="#ffb94a"><rect x="744" y="284" width="10" height="28" rx="5"/><rect x="768" y="284" width="10" height="28" rx="5"/><rect x="792" y="284" width="10" height="28" rx="5"/><rect x="814" y="284" width="8" height="28" rx="4"/></g>
+                    <path d="M720 276Q746 274 756 254L780 246L804 254Q814 274 840 276L832 282H728Z" fill="url(#roof2)"/>
+                    <path d="M720 276Q746 274 756 254L780 246L804 254Q814 274 840 276" fill="none" stroke="#f3c640" stroke-width="1.4"/>
+                  </g>
+                  <!-- กำแพงริมน้ำ -->
+                  <rect x="-10" y="309" width="1020" height="9" fill="#b9ae8f"/><rect x="-10" y="312" width="1020" height="6" fill="url(#bal)"/><rect x="-10" y="307" width="1020" height="3" fill="#e8dcc0"/>
+                  <g id="shoreLights"></g>
+                </g>
+              </defs>
+              <rect width="1000" height="560" fill="url(#sk2)"/>
+              <g id="riverStars"></g>
+              <circle cx="150" cy="88" r="46" fill="url(#stGl)" opacity=".55"/><circle cx="150" cy="88" r="21" fill="#fff0c8"/><circle cx="143" cy="82" r="4" fill="#ecd7a0" opacity=".6"/>
+              <ellipse cx="620" cy="300" rx="420" ry="190" fill="url(#tGlow)" opacity=".55"/>
+              <use href="#wat"/>
+              <rect y="316" width="1000" height="244" fill="url(#water2)"/>
+              <rect y="316" width="1000" height="46" fill="#ffb86a" opacity=".07"/>
+              <g mask="url(#reflMask)"><g transform="translate(0 632) scale(1 -1)" filter="url(#ripple)" opacity=".62"><use href="#wat"/></g></g>
+              <g stroke="#c9d6ff" stroke-width="1.2" stroke-linecap="round" opacity=".2" id="ripples"></g>
+              <g id="floaters"></g>
+            </svg>
+            <div class="river-hint" id="riverHint">点击水灯，阅读心愿 <small>แตะกระทงเพื่ออ่านคำอธิษฐาน</small></div>
+            <div id="riverLayer"></div>
+            <div class="river-empty d-none" id="riverEmpty">河面还很安静…… <small>แม่น้ำยังเงียบอยู่</small></div>
+          </div>
+        <div class="river-bar">
+          <div class="river-title">
+            <div class="eyebrow mb-0">同一条河 · แม่น้ำสายเดียวกัน</div>
+            <div class="h-zh">河畔暗号：<span id="roomLabel"></span></div>
+          </div>
+          <div class="d-flex flex-wrap gap-2 align-items-center justify-content-end">
+            <button class="btn btn-sm btn-outline-gold" id="backBtn" type="button">‹ 返回 <small>กลับ</small></button>
+            <span class="badge status" id="statusBadge">连接中</span>
+            <button class="btn btn-sm btn-outline-gold" id="fwBtn" type="button">燃放烟花 <small>จุดพลุ</small></button>
+          </div>
+        </div>
+        <div id="localNote" class="river-note d-none"></div>
+        <div class="river-foot d-none" id="makeMineWrap">
+          <button class="btn btn-lantern btn-lg" id="makeMine" type="button">去放我的水灯 <small>ไปปล่อยกระทงของฉัน</small></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="countdown" id="countdown" aria-hidden="true"><div class="count-num" id="countNum">三</div><div class="count-sub">心愿即将入水 · คำอธิษฐานกำลังลงน้ำ</div></div>
+
+  <!-- คำอธิษฐาน -->
+  <div class="modal fade" id="wishModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content paper">
+        <div class="modal-body p-4 text-center">
+          <div class="modal-kr" id="modalKr"></div>
+          <div class="paper-owner" id="modalOwner"></div>
+          <div class="paper-text" id="modalText"></div>
+          <div class="paper-time" id="modalTime"></div>
+          <button type="button" class="btn btn-lantern mt-3 px-4" data-bs-dismiss="modal">收好心愿 <small>ปิด</small></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index:1090">
+    <div id="toast" class="toast align-items-center toast-gold border-0" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex"><div class="toast-body" id="toastBody"></div></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
