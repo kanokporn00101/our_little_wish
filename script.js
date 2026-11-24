@@ -999,11 +999,21 @@
     b.className = "badge status " + (mode === "firebase" ? "ok" : "local");
     b.textContent =
       mode === "firebase" ? "在线 · ออนไลน์" : "本机模式 · ในเครื่อง";
+
     const ln = $("#localNote");
-    if (mode === "server") ln.classList.add("d-none");
-    else if (!ln.dataset.closed) ln.classList.remove("d-none");
-    ln.textContent =
-      "Firebase ยังไม่ได้เชื่อมต่อหรือมีปัญหา: กระทงจะแสดงเฉพาะเครื่องนี้ ตรวจสอบ firebase-config.js และ Database Rules ก่อน · ยังไม่ออนไลน์";
+
+    if (mode === "firebase") {
+      // เชื่อมต่อ Firebase สำเร็จ ซ่อนข้อความแจ้งเตือน
+      ln.classList.add("d-none");
+    } else {
+      // ยังไม่ได้เชื่อมต่อ Firebase แสดงข้อความแจ้งเตือน
+      ln.textContent =
+        "Firebase ยังไม่ได้เชื่อมต่อหรือมีปัญหา: กระทงจะแสดงเฉพาะเครื่องนี้ ตรวจสอบ firebase-config.js และ Database Rules ก่อน · ยังไม่ออนไลน์";
+
+      if (!ln.dataset.closed) {
+        ln.classList.remove("d-none");
+      }
+    }
   }
   $("#localNote").addEventListener("click", (e) => {
     e.currentTarget.dataset.closed = "1";
